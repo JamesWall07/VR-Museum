@@ -15,6 +15,12 @@ public class portalTextureSetup : MonoBehaviour
 
     public Camera cameraMuseumTiger;
     public Material cameraMatMuseumTiger;
+    
+    public Camera cameraTurtle;
+    public Material cameraMatTurtle;
+
+    public Camera cameraMuseumTurtle;
+    public Material cameraMatMuseumTurtle;
 
 
     // Start is called before the first frame update
@@ -49,6 +55,20 @@ public class portalTextureSetup : MonoBehaviour
         }
         cameraMuseumTiger.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
         cameraMatMuseumTiger.mainTexture = cameraMuseumTiger.targetTexture;
+
+        if (cameraTurtle.targetTexture != null)
+        {
+            cameraTurtle.targetTexture.Release();
+        }
+        cameraTurtle.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
+        cameraMatTurtle.mainTexture = cameraTurtle.targetTexture;
+
+        if (cameraMuseumTurtle.targetTexture != null)
+        {
+            cameraMuseumTurtle.targetTexture.Release();
+        }
+        cameraMuseumTurtle.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
+        cameraMatMuseumTurtle.mainTexture = cameraMuseumTurtle.targetTexture;
 
     }
 
